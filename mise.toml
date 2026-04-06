@@ -1,0 +1,30 @@
+[tools]
+java = "temurin-21.0.10+7.0.LTS"
+
+[tasks.build]
+description = "Build the plugin"
+run = "./gradlew buildPlugin"
+
+[tasks.run]
+description = "Launch sandbox IDE with plugin loaded"
+run = "./gradlew runIde"
+
+[tasks.verify]
+description = "Run IntelliJ Plugin Verifier"
+run = "./gradlew verifyPlugin"
+
+[tasks.test]
+description = "Run tests"
+run = "./gradlew test"
+
+[tasks.clean]
+description = "Clean build artifacts"
+run = "./gradlew clean"
+
+[tasks.lex]
+description = "Generate lexer from JFlex spec"
+run = "./gradlew generateKageLexer"
+
+[tasks.check]
+description = "Build + verify"
+depends = ["build", "verify"]

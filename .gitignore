@@ -1,0 +1,35 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IntelliJ plugin sandbox
+build/idea-sandbox/
+
+# JFlex generated sources
+src/main/gen/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+!gradle/wrapper/*.jar
+
+# Kotlin
+*.kotlin_module
+
+# IntelliJ Platform Gradle Plugin cache
+.intellijPlatform/
+
+# Logs
+*.log

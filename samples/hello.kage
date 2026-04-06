@@ -1,0 +1,17 @@
+//kage:unit pixels
+
+package main
+
+func Fragment(dstPos vec4, srcPos vec2, color vec4) vec4 {
+	clr := imageSrc0At(srcPos)
+
+	// Invert colors
+	inverted := vec4(1.0 - clr.x, 1.0 - clr.y, 1.0 - clr.z, clr.w)
+
+	// Mix based on horizontal position
+	origin := imageDstOrigin()
+	size := imageDstSize()
+	t := (dstPos.x - origin.x) / size.x
+
+	return mix(clr, inverted, smoothstep(0.4, 0.6, t))
+}

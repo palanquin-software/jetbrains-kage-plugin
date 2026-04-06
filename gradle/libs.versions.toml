@@ -1,0 +1,9 @@
+[versions]
+intelliJPlatform = "2.13.1"
+kotlin = "2.1.20"
+grammarKit = "2023.3.0.3"
+
+[plugins]
+intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "intelliJPlatform" }
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+grammarKit = { id = "org.jetbrains.grammarkit", version.ref = "grammarKit" }

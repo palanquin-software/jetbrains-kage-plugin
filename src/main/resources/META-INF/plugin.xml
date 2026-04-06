@@ -1,0 +1,58 @@
+<idea-plugin require-restart="false">
+
+    <id>com.palanquinsoftware.kage</id>
+    <name>Kage</name>
+
+    <vendor url="https://palanquinsoftware.com">Palanquin Software</vendor>
+
+    <description><![CDATA[
+        Language support for Kage, the shader language used by Ebitengine.
+
+        Features:
+        <ul>
+            <li>Syntax highlighting for keywords, types, builtins, operators, and literals</li>
+            <li>Brace matching and auto-pairing</li>
+            <li>Line and block commenting (Cmd+/ / Ctrl+/)</li>
+            <li>Autocompletion for keywords, types, builtin functions, and image functions</li>
+            <li>Compiler directive highlighting (//kage:unit)</li>
+            <li>Color settings page (Settings > Editor > Color Scheme > Kage)</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+
+        <fileType
+            name="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageFileType"
+            fieldName="INSTANCE"
+            language="Kage"
+            extensions="kage"/>
+
+        <lang.parserDefinition
+            language="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageParserDefinition"/>
+
+        <lang.syntaxHighlighterFactory
+            language="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageSyntaxHighlighterFactory"/>
+
+        <lang.braceMatcher
+            language="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageBraceMatcher"/>
+
+        <lang.commenter
+            language="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageCommenter"/>
+
+        <completion.contributor
+            language="Kage"
+            implementationClass="com.palanquinsoftware.kage.KageCompletionContributor"/>
+
+        <colorSettingsPage
+            implementation="com.palanquinsoftware.kage.KageColorSettingsPage"/>
+
+    </extensions>
+
+</idea-plugin>

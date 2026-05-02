@@ -1,22 +1,12 @@
 <idea-plugin require-restart="false">
 
-    <id>com.palanquinsoftware.kage</id>
-    <name>Kage</name>
+    <id>com.palanquinsoftware.tova</id>
+    <name>Tova</name>
 
     <vendor url="https://palanquinsoftware.com">Palanquin Software</vendor>
 
     <description><![CDATA[
-        Language support for Kage, the shader language used by Ebitengine.
-
-        Features:
-        <ul>
-            <li>Syntax highlighting for keywords, types, builtins, operators, and literals</li>
-            <li>Brace matching and auto-pairing</li>
-            <li>Line and block commenting (Cmd+/ / Ctrl+/)</li>
-            <li>Autocompletion for keywords, types, builtin functions, and image functions</li>
-            <li>Compiler directive highlighting (//kage:unit)</li>
-            <li>Color settings page (Settings > Editor > Color Scheme > Kage)</li>
-        </ul>
+        Language support for Tova...
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
@@ -24,34 +14,34 @@
     <extensions defaultExtensionNs="com.intellij">
 
         <fileType
-            name="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageFileType"
+            name="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaFileType"
             fieldName="INSTANCE"
-            language="Kage"
-            extensions="kage"/>
+            language="Tova"
+            extensions="tova"/>
 
         <lang.parserDefinition
-            language="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageParserDefinition"/>
+            language="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaParserDefinition"/>
 
         <lang.syntaxHighlighterFactory
-            language="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageSyntaxHighlighterFactory"/>
+            language="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaSyntaxHighlighterFactory"/>
 
         <lang.braceMatcher
-            language="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageBraceMatcher"/>
+            language="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaBraceMatcher"/>
 
         <lang.commenter
-            language="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageCommenter"/>
+            language="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaCommenter"/>
 
         <completion.contributor
-            language="Kage"
-            implementationClass="com.palanquinsoftware.kage.KageCompletionContributor"/>
+            language="Tova"
+            implementationClass="com.palanquinsoftware.tova.TovaCompletionContributor"/>
 
         <colorSettingsPage
-            implementation="com.palanquinsoftware.kage.KageColorSettingsPage"/>
+            implementation="com.palanquinsoftware.tova.TovaColorSettingsPage"/>
 
     </extensions>
 

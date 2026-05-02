@@ -35,7 +35,7 @@ intellijPlatform {
     }
 
     pluginConfiguration {
-        id = "com.palanquinsoftware.kage"
+        id = "com.palanquinsoftware.tova"
         name = providers.gradleProperty("pluginName")
         version = providers.gradleProperty("pluginVersion")
 
@@ -50,14 +50,14 @@ intellijPlatform {
     }
 }
 
-val generateKageLexer by tasks.registering(GenerateLexerTask::class) {
-    sourceFile.set(layout.projectDirectory.file("src/main/flex/Kage.flex"))
-    targetOutputDir.set(layout.buildDirectory.dir("generated/sources/flex/com/palanquinsoftware/kage"))
+val generateTovaLexer by tasks.registering(GenerateLexerTask::class) {
+    sourceFile.set(layout.projectDirectory.file("src/main/flex/Tova.flex"))
+    targetOutputDir.set(layout.buildDirectory.dir("generated/sources/flex/com/palanquinsoftware/tova"))
     purgeOldFiles.set(true)
 }
 
 tasks.named("compileKotlin") {
-    dependsOn(generateKageLexer)
+    dependsOn(generateTovaLexer)
 }
 
 sourceSets.main {

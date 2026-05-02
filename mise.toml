@@ -23,7 +23,7 @@ run = "./gradlew clean"
 
 [tasks.lex]
 description = "Generate lexer from JFlex spec"
-run = "./gradlew generateKageLexer"
+run = "./gradlew generateTovaLexer"
 
 [tasks.check]
 description = "Build + verify"
